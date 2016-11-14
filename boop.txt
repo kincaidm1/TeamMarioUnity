@@ -1,4 +1,8 @@
 7:47pm
+<<<<<<< HEAD
 Max
 
 8:31 PM Jacob
+=======
+Maxwell
+>>>>>>> refs/remotes/origin/master
