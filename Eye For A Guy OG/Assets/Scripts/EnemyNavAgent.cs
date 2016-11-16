@@ -6,6 +6,16 @@ public class EnemyNavAgent : MonoBehaviour {
 	public Transform[] points;
 	private int destPoint = 0;
 	private NavMeshAgent agent;
+
+	[SerializeField]
+    public Transform player;
+    public float minDistance = 10f;
+    public float fovAngle = 30f;
+
+    public float range;
+    public RaycastHit hitInfo;
+    public float angle;
+	
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent>();
@@ -36,7 +46,44 @@ public class EnemyNavAgent : MonoBehaviour {
 	void Update () {
 		// Choose the next destination point when the agent gets
 		// close to the current one.
+		DetectPlayer();
 		if (agent.remainingDistance < 0.5f)
 			GotoNextPoint();
 	}
+
+	void DetectPlayer () {
+		range = Vector3.Distance(transform.position, player.position);
+
+        Vector3 targetDir = player.position - transform.position;
+        angle = Vector3.Angle(targetDir, transform.forward);
+
+        if (CanPlayerBeSeen())
+        {
+            Debug.Log("Player Visible");
+            
+            while ((player.position - transform.position).magnitude < 10f) {
+            agent.SetDestination(player.position);
+            break;
+            }
+        }
+        agent.speed = 3.5f;
+	}
+
+	public bool CanPlayerBeSeen() {
+        if (range < minDistance && !Physics.Linecast(transform.position, player.position)) {
+            if (PlayerInBeam()) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public bool PlayerInBeam() {
+        if (angle < fovAngle) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
