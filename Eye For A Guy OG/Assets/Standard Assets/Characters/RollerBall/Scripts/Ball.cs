@@ -8,10 +8,12 @@ namespace UnityStandardAssets.Vehicles.Ball
         [SerializeField] private float m_MovePower = 5; // The force added to the ball to move it.
         [SerializeField] private bool m_UseTorque = true; // Whether or not to use torque to move the ball.
         [SerializeField] private float m_MaxAngularVelocity = 25; // The maximum velocity the ball can rotate at.
-        [SerializeField] private float m_JumpPower = 2; // The force added to the ball when it jumps.
+        [SerializeField]
+        private float brakeForce = 2;
 
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
+        private float timeLeft = 5;
 
 
         private void Start()
@@ -22,7 +24,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         }
 
 
-        public void Move(Vector3 moveDirection, bool jump)
+        public void Move(Vector3 moveDirection, bool brake)
         {
             // If using torque to rotate the ball...
             if (m_UseTorque)
@@ -36,11 +38,11 @@ namespace UnityStandardAssets.Vehicles.Ball
                 m_Rigidbody.AddForce(moveDirection*m_MovePower);
             }
 
-            // If on the ground and jump is pressed...
-            if (Physics.Raycast(transform.position, -Vector3.up, k_GroundRayLength) && jump)
+            // If on the ground and brake is pressed...
+            if (Physics.Raycast(transform.position, -Vector3.up, k_GroundRayLength) && brake)
             {
-                // ... add force in upwards.
-                m_Rigidbody.AddForce(Vector3.up*m_JumpPower, ForceMode.Impulse);
+                // ... stop
+                m_Rigidbody.AddForce(-brakeForce * m_Rigidbody.velocity);
             }
         }
     }
