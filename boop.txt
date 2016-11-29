@@ -1,7 +1,13 @@
 7:47pm
 <<<<<<< HEAD
+<<<<<<< HEAD
+Max
+
+8:31 PM Jacob
+=======
 Maxwell
 Matt
+>>>>>>> refs/remotes/origin/master
 =======
 Maxwell
 >>>>>>> refs/remotes/origin/master
