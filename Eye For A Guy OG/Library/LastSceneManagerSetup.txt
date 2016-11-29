@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Deadass Sea.unity
+- path: Assets/Da Hood.unity
   isLoaded: 1
   isActive: 1
