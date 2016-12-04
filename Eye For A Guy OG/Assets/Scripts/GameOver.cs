@@ -27,6 +27,7 @@ public class GameOver : MonoBehaviour {
     {
         gameOver.enabled = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void Quit ()
