@@ -8,17 +8,23 @@ public class GameOver : MonoBehaviour {
     public Canvas gameOverScreen;
     public Button retryBtn;
     public Button quitBtn;
+    public Canvas winScreen;
 
     void Awake()
     {
-        retryBtn = GetComponent<Button>();
-        quitBtn = GetComponent<Button>();
         gameOverScreen.enabled = false;
+        winScreen.enabled = false;
     }
 
     public void playerCaught()
     {
         gameOverScreen.enabled = true;
+        Time.timeScale = 0;
+    }
+
+    public void victoryCondition()
+    {
+        winScreen.enabled = true;
         Time.timeScale = 0;
     }
 
