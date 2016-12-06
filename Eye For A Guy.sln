@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{FC2EF793-0BB7-7C9D-9836-9714225FDD06}") = "Eye For A Guy", "Assembly-CSharp-firstpass.csproj", "{A0893862-749F-253C-22D9-14F04BB7E657}"
+EndProject
+Project("{FC2EF793-0BB7-7C9D-9836-9714225FDD06}") = "Eye For A Guy", "Assembly-CSharp-Editor.csproj", "{A34AE585-F841-2D7E-41FE-2EEA6FF7D6FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0893862-749F-253C-22D9-14F04BB7E657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0893862-749F-253C-22D9-14F04BB7E657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0893862-749F-253C-22D9-14F04BB7E657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0893862-749F-253C-22D9-14F04BB7E657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34AE585-F841-2D7E-41FE-2EEA6FF7D6FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34AE585-F841-2D7E-41FE-2EEA6FF7D6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34AE585-F841-2D7E-41FE-2EEA6FF7D6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34AE585-F841-2D7E-41FE-2EEA6FF7D6FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
